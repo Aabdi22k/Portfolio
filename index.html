@@ -11,120 +11,75 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
-
     <link
       rel="stylesheet"
       type="text/css"
       href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
     />
   </head>
-  <body class="ksb text-white">
-    <div
-      id="main"
-      class="w-full flex flex-col py-12 px-12 md:px-24 gap-20 md:gap-40 bg-black"
-    >
+
+  <body class="ksb text-white bg-black">
+    <div id="main" class="w-full flex flex-col py-12 px-12 md:px-24 gap-20 md:gap-40">
       <!-- Nav Bar -->
       <section
         id="navbar"
-        class="sticky z-50 top-12 p-4 border-2 border-neutral-700 bg-neutral-900 rounded-lg flex justify-between items-center flex-row"
+        class="reveal-on-intro sticky z-50 top-12 p-4 border-2 border-neutral-700 bg-neutral-900 rounded-lg flex justify-between items-center"
       >
-        <div
-          class="grid grid-cols-2 h-8 w-8 grid-rows-2 gap-0 text-sm font-bold"
-        >
+        <div class="grid grid-cols-2 h-8 w-8 grid-rows-2 gap-0 text-sm font-bold">
           <div class="text-center">A</div>
           <div class="text-center">B</div>
           <div class="text-center">D</div>
           <div class="text-center">I</div>
         </div>
-        <div
+
+        <nav
           id="nav"
-          class="flex flex-col md:flex md:flex-row absolute md:static top-20 right-0 md:top-auto md:right-auto bg-neutral-900 border-2 border-neutral-700 md:border-0  p-4 md:p-0 rounded-lg gap-4 md:gap-6 text-sm"
+          class="flex flex-col md:flex md:flex-row absolute md:static top-20 right-0 md:top-auto md:right-auto bg-neutral-900 border-2 border-neutral-700 md:border-0 p-4 md:p-0 rounded-lg gap-4 md:gap-6 text-sm"
         >
-          <a
-            href="#hero"
-            class="hover:scale-[120%] cursor-pointer transition-all"
-            >Home</a
-          >
-          <a
-            href="#featured-projects"
-            class="hover:scale-[120%] cursor-pointer transition-all"
-            >Projects</a
-          >
-          <a
-            href="#skills"
-            class="hover:scale-[120%] cursor-pointer transition-all"
-            >Skills</a
-          >
+          <a href="#hero" class="hover:scale-[120%] cursor-pointer transition-all">Home</a>
+          <a href="#featured-projects" class="hover:scale-[120%] cursor-pointer transition-all">Projects</a>
+          <a href="#skills" class="hover:scale-[120%] cursor-pointer transition-all">Skills</a>
+          <a href="#experience" class="hover:scale-[120%] cursor-pointer transition-all">Experience</a>
+        </nav>
 
-          <a
-            href="#experience"
-            class="hover:scale-[120%] cursor-pointer transition-all"
-            >Experience</a
-          >
-        </div>
-
-        <!-- ICONS: sun + hamburger -->
         <div class="flex gap-8 justify-center items-center">
-          <i
-            id="hamburger"
-            class="text-xl md:hidden text-white bi bi-list hover:scale-[120%] cursor-pointer transition-all"
-          ></i>
+          <i id="hamburger" class="text-xl md:hidden text-white bi bi-list hover:scale-[120%] cursor-pointer transition-all"></i>
         </div>
       </section>
 
-      <!-- HERO -->
+      <!-- HERO (centered on ALL sizes) -->
       <section
         id="hero"
-        class="scroll-mt-36 flex pt-8 flex-col 2xl:flex-row w-full items-center text-center 2xl:text-left gap-24"
+        class="reveal-on-intro min-h-[60vh] w-full flex items-center justify-center text-center"
       >
-        <div
-          class="w-full 2xl:w-full flex flex-col items-center 2xl:items-start"
-        >
-          <div id="hero-text" class="flex flex-col gap-12">
-            <div class="flex 2xl:items-start items-center flex-col gap-12">
+        <div class="w-full max-w-4xl flex flex-col items-center justify-center">
+          <div id="hero-text" class="flex flex-col gap-12 fade-in-bottom">
+            <div class="flex items-center flex-col gap-12">
               <div class="flex flex-col gap-2">
                 <div class="flex flex-col">
                   <span class="kb hero-text">Hello, I'm</span>
-                  <span id="name" class="hid kb hero-text">Farah Abdi,</span>
+                  <span id="name" class="hid kb hero-text"></span>
                   <span class="kb hero-text">Software Engineer.</span>
                 </div>
-                <span class="kr text-neutral-400 hero-subtext"
-                  >BS Computer Science & Engineering, 2028 @ The Ohio State
-                  University
+                <span class="kr text-neutral-400 hero-subtext">
+                  BS Computer Science & Engineering @ The Ohio State University
                 </span>
               </div>
+
               <div class="flex flex-row gap-6">
-                <a
-                  class="btn"
-                  target="_blank"
-                  href="https://www.github.com/Aabdi22k/"
-                >
-                  <i
-                    class="text-lg bi bi-github hover:scale-[120%] cursor-pointer transition-all"
-                  >
-                  </i>
+                <a class="btn" target="_blank" href="https://www.github.com/Aabdi22k/">
+                  <i class="text-lg bi bi-github hover:scale-[120%] cursor-pointer transition-all"></i>
                 </a>
-                <a
-                  class="btn"
-                  target="_blank"
-                  href="https://www.linkedin.com/in/faabdi/"
-                  ><i
-                    class="text-lg bi bi-linkedin hover:scale-[120%] cursor-pointer transition-all"
-                  ></i
-                ></a>
-                <a
-                  class="btn"
-                  href="./assets/resume.pdf"
-                  download="Farah_Abdi_Resume.pdf"
-                  ><span class="cursor-pointer">Resume</span></a
-                >
+                <a class="btn" target="_blank" href="https://www.linkedin.com/in/farahabdi-/">
+                  <i class="text-lg bi bi-linkedin hover:scale-[120%] cursor-pointer transition-all"></i>
+                </a>
+                <a class="btn" href="./assets/resume.pdf" download="Farah_Abdi_Resume.pdf">
+                  <span class="cursor-pointer">Resume</span>
+                </a>
               </div>
-              <div
-                class="scroll-indicator-container 2xl:absolute flex justify-center 2xl:left-[100%] 2xl:top-[120%] pointer-events-none"
-              >
-                <div
-                  class="scroll-indicator flex flex-col items-center -gap-16"
-                >
+
+              <div class="scroll-indicator-container flex justify-center pointer-events-none">
+                <div class="scroll-indicator flex flex-col items-center -gap-16">
                   <i class="bi bi-chevron-down arrow"></i>
                   <i class="bi bi-chevron-down arrow"></i>
                 </div>
@@ -132,57 +87,43 @@
             </div>
           </div>
         </div>
-        <div
-          id="cardcontainer"
-          class="hidden 2xl:flex w-full 2xl:w-full h-full items-center justify-center"
-        ></div>
       </section>
-      <!-- Featured Project -->
-      <section
-        id="featured-projects"
-        class="scroll-mt-36 flex flex-col gap-24 items-center justify-center"
-      >
-        <span class="hero-text">Featured Projects</span>
+
+      <!-- Featured Projects -->
+      <section id="featured-projects" class="scroll-mt-36 flex flex-col gap-24 items-center justify-center fade-in-bottom">
+        <span class="hero-text fade-in-bottom">Featured&nbsp;Projects</span>
+
         <div class="projects-container grid grid-cols-1 2xl:grid-cols-2 gap-16">
-          <div class="project-card overflow-visible">
+          <div class="project-card overflow-visible fade-in-left">
             <div class="project-image md:mt-0 md:-ml-20 -mt-20">
-              <img src="./assets/SPOP 2.png" alt="Sparkx Chat screenshot" />
+              <img src="./assets/SPOP 2.png" alt="Solar Predictor screenshot" />
             </div>
-            <div
-              class="project-content md:items-start items-center flex flex-col"
-            >
+            <div class="project-content items-center flex flex-col">
               <h3>Solar Predictor</h3>
               <p class="description">
-                A Solar Panel Output Predictor which uses a model to predict GHI
-                then calculates power output based on solar array size and
-                solarp panel efficieny,
+                A Solar Panel Output Predictor which uses a model to predict GHI then calculates power output
+                based on solar array size and solar panel efficiency.
               </p>
               <div class="tech-list">
                 <span>Python</span>
                 <span>TensorFlow</span>
-                <span>Scikit‑Learn</span>
+                <span>Scikit-Learn</span>
               </div>
               <div class="btn-group">
-                <a target="_blank" href="https://solar.farahabdi.com/" class="btn">Live App</a>
+                <a target="_blank" href="https://solar.farahabdi.com/" class="btn">Live&nbsp;App</a>
                 <a target="_blank" href="https://github.com/Aabdi22k/Solar-Energy-Output-Predictor" class="btn">GitHub</a>
               </div>
             </div>
           </div>
 
-          <div class="project-card overflow-visible">
+          <div class="project-card overflow-visible fade-in-right">
             <div class="project-image md:-mr-20 md:mt-0 -mt-20">
-              <img
-                src="./assets/2kscout safari.png"
-                alt="Sparkx Chat screenshot"
-              />
+              <img src="./assets/2kscout safari.png" alt="2k Scout screenshot" />
             </div>
-            <div
-              class="project-content md:items-start items-center flex flex-col"
-            >
+            <div class="project-content items-center flex flex-col">
               <h3>2k Scout</h3>
               <p class="description">
-                A fantasy basketball team building tool which uses NBA player 2k
-                ratings to help you draft your team.
+                A fantasy basketball team building tool using NBA player 2k ratings to help you draft your team.
               </p>
               <div class="tech-list">
                 <span>React</span>
@@ -195,28 +136,22 @@
             </div>
           </div>
 
-          <div class="project-card overflow-visible">
+          <div class="project-card overflow-visible fade-in-left">
             <div class="project-image md:mt-0 md:-ml-20 -mt-20">
-              <img
-                src="./assets/sparkx desktop.png"
-                alt="Sparkx Chat screenshot"
-              />
+              <img src="./assets/sparkx desktop.png" alt="Sparkx Chat screenshot" />
             </div>
-            <div
-              class="project-content md:items-start items-center flex flex-col"
-            >
+            <div class="project-content items-center flex flex-col">
               <h3>Sparkx Chat</h3>
               <p class="description">
-                A live messaging app that enables seamless real‑time
-                communication across web and mobile platforms.
+                A live messaging app enabling seamless real-time communication across web and mobile.
               </p>
               <div class="tech-list">
                 <span>React</span>
-                <span>React Native</span>
+                <span>React&nbsp;Native</span>
                 <span>MongoDB</span>
               </div>
               <div class="btn-group">
-                <a target="_blank" href="https://chat.farahabdi.com" class="btn">Live App</a>
+                <a target="_blank" href="https://chat.farahabdi.com" class="btn">Live&nbsp;App</a>
                 <a target="_blank" href="https://github.com/Aabdi22k/Sparkx-Frontend" class="btn">GitHub</a>
               </div>
             </div>
@@ -225,146 +160,76 @@
       </section>
 
       <!-- Technical Skills -->
-      <section
-        id="skills"
-        class="scroll-mt-36 flex flex-col gap-12 items-center py-12"
-      >
-        <span class="hero-text">Technical Skills</span>
-        <div
-          class="skills-container flex flex-wrap justify-center gap-4 px-4 max-w-4xl"
-        >
+      <section id="skills" class="scroll-mt-36 flex flex-col gap-12 items-center py-12 fade-in-bottom">
+        <span class="hero-text fade-in-bottom">Technical Skills</span>
+
+        <div class="skills-container flex flex-wrap justify-center gap-4 px-4 max-w-4xl">
           <!-- Languages -->
-          <span class="skill"
-            ><i class="devicon-python-plain colored"></i>Python</span
-          >
-          <span class="skill"
-            ><i class="devicon-java-plain colored"></i>Java</span
-          >
-          <span class="skill"
-            ><i class="devicon-csharp-plain colored"></i>C#</span
-          >
-          <span class="skill"
-            ><i class="devicon-javascript-plain colored"></i>JavaScript</span
-          >
-          <span class="skill"
-            ><i class="devicon-html5-plain colored"></i>HTML5</span
-          >
-          <span class="skill"
-            ><i class="devicon-css3-plain colored"></i>CSS3</span
-          >
-          <span class="skill"
-            ><i class="devicon-typescript-plain colored"></i>TypeScript</span
-          >
+          <span class="skill fade-in-bottom"><i class="devicon-python-plain colored"></i>Python</span>
+          <span class="skill fade-in-bottom"><i class="devicon-java-plain colored"></i>Java</span>
+          <span class="skill fade-in-bottom"><i class="devicon-csharp-plain colored"></i>C#</span>
+          <span class="skill fade-in-bottom"><i class="devicon-javascript-plain colored"></i>JavaScript</span>
+          <span class="skill fade-in-bottom"><i class="devicon-html5-plain colored"></i>HTML5</span>
+          <span class="skill fade-in-bottom"><i class="devicon-css3-plain colored"></i>CSS3</span>
+          <span class="skill fade-in-bottom"><i class="devicon-typescript-plain colored"></i>TypeScript</span>
 
           <!-- Frameworks -->
-          <span class="skill"
-            ><i class="devicon-react-original colored"></i>React</span
-          >
-          <span class="skill"
-            ><i class="devicon-react-original colored"></i>React Native</span
-          >
-          <span class="skill"
-            ><i class="devicon-nodejs-plain colored"></i>Node.js</span
-          >
-          <span class="skill"
-            ><i class="devicon-mongodb-plain colored"></i>MongoDB</span
-          >
-          <span class="skill"
-            ><i class="devicon-tailwindcss-plain colored"></i>TailwindCSS</span
-          >
-          <span class="skill"
-            ><i class="devicon-express-original colored"></i>Express.js</span
-          >
-          <span class="skill"
-            ><i class="devicon-django-plain colored"></i>Django</span
-          >
+          <span class="skill fade-in-bottom"><i class="devicon-react-original colored"></i>React</span>
+          <span class="skill fade-in-bottom"><i class="devicon-react-original colored"></i>React Native</span>
+          <span class="skill fade-in-bottom"><i class="devicon-nodejs-plain colored"></i>Node.js</span>
+          <span class="skill fade-in-bottom"><i class="devicon-mongodb-plain colored"></i>MongoDB</span>
+          <span class="skill fade-in-bottom"><i class="devicon-tailwindcss-plain colored"></i>TailwindCSS</span>
+          <span class="skill fade-in-bottom"><i class="devicon-express-original colored"></i>Express.js</span>
+          <span class="skill fade-in-bottom"><i class="devicon-django-plain colored"></i>Django</span>
 
           <!-- Libraries -->
-          <span class="skill"
-            ><i class="devicon-tensorflow-original colored"></i>TensorFlow</span
-          >
-          <span class="skill"
-            ><i class="devicon-pandas-plain colored"></i>Pandas</span
-          >
-          <span class="skill"
-            ><i class="devicon-matplotlib-plain colored"></i>Matplotlib</span
-          >
-          <span class="skill"
-            ><i class="devicon-scikitlearn-plain colored"></i>scikit‑learn</span
-          >
-          <span class="skill"
-            ><i class="devicon-pytorch-original colored"></i>PyTorch</span
-          >
+          <span class="skill fade-in-bottom"><i class="devicon-tensorflow-original colored"></i>TensorFlow</span>
+          <span class="skill fade-in-bottom"><i class="devicon-pandas-plain colored"></i>Pandas</span>
+          <span class="skill fade-in-bottom"><i class="devicon-matplotlib-plain colored"></i>Matplotlib</span>
+          <span class="skill fade-in-bottom"><i class="devicon-scikitlearn-plain colored"></i>scikit-learn</span>
+          <span class="skill fade-in-bottom"><i class="devicon-pytorch-original colored"></i>PyTorch</span>
 
-          <!-- Developer Tools -->
-          <span class="skill"
-            ><i class="devicon-docker-plain colored"></i>Docker</span
-          >
-          <span class="skill"
-            ><i class="devicon-pycharm-plain colored"></i>PyCharm</span
-          >
-          <span class="skill"
-            ><i class="devicon-intellij-plain colored"></i>IntelliJ IDEA</span
-          >
-          <span class="skill"
-            ><i class="devicon-git-plain colored"></i>Git</span
-          >
-          <span class="skill"
-            ><i class="devicon-vscode-plain colored"></i>VS Code</span
-          >
-          <span class="skill"
-            ><i class="devicon-figma-plain colored"></i>Figma</span
-          >
-          <span class="skill"
-            ><i class="devicon-amazonwebservices-plain colored"></i>AWS</span
-          >
+          <!-- Tools -->
+          <span class="skill fade-in-bottom"><i class="devicon-docker-plain colored"></i>Docker</span>
+          <span class="skill fade-in-bottom"><i class="devicon-pycharm-plain colored"></i>PyCharm</span>
+          <span class="skill fade-in-bottom"><i class="devicon-intellij-plain colored"></i>IntelliJ&nbsp;IDEA</span>
+          <span class="skill fade-in-bottom"><i class="devicon-git-plain colored"></i>Git</span>
+          <span class="skill fade-in-bottom"><i class="devicon-vscode-plain colored"></i>VS&nbsp;Code</span>
+          <span class="skill fade-in-bottom"><i class="devicon-figma-plain colored"></i>Figma</span>
+          <span class="skill fade-in-bottom"><i class="devicon-amazonwebservices-plain colored"></i>AWS</span>
         </div>
       </section>
 
-      <!-- professIONAL EXPERIENCE -->
-      <section
-        id="experience"
-        class="scroll-mt-36 flex flex-col gap-12 items-center py-20 w-full max-w-4xl mx-auto"
-      >
-        <span class="hero-text">Professional Experience</span>
+      <!-- Professional Experience -->
+      <section id="experience" class="scroll-mt-36 flex flex-col gap-12 items-center py-20 w-full max-w-4xl mx-auto fade-in-bottom">
+        <span class="hero-text fade-in-bottom">Professional&nbsp;Experience</span>
 
         <div class="flex flex-col gap-12 w-full">
-          <!-- Start EXP Block -->
-          <div class="exp-card">
-            <div
-              class="bg-neutral-900 border-2 border-neutral-700 p-6 rounded-lg flex flex-col gap-4"
-            >
-              <!-- Mobile layout (≤640px) -->
-              <div
-                class="block sm:hidden flex flex-col items-center gap-2 text-center"
-              >
-                <span class="text-sm">May 2025 – Aug 2025  •  Columbus, OH</span>
-                <h3 class="ksb text-xl">Software Engineering Intern</h3>
-                <p class="kb text-neutral-200 text-sm">
-                  True Interpretation & Consultation Services
-                </p>
+          <!-- EXP Block 1 -->
+          <div class="exp-card fade-in-left">
+            <div class="bg-neutral-900 border-2 border-neutral-700 p-6 rounded-lg flex flex-col gap-4">
+              <div class="block sm:hidden flex flex-col items-center gap-2 text-center">
+                <span class="text-sm">May&nbsp;2025&nbsp;–&nbsp;Aug&nbsp;2025&nbsp; • &nbsp;Columbus,&nbsp;OH</span>
+                <h3 class="ksb text-xl">Software&nbsp;Engineering&nbsp;Intern</h3>
+                <p class="kb text-neutral-200 text-sm">True Interpretation&nbsp;&amp;&nbsp;Consultation&nbsp;Services</p>
               </div>
 
-              <!-- Desktop layout (>640px) -->
               <div class="hidden sm:block">
                 <div class="flex justify-between text-sm">
-                  <h3 class="ksb text-xl">Software Engineering Intern</h3>
-                  <span>May 2025 – Aug 2025</span>
+                  <h3 class="ksb text-xl">Software&nbsp;Engineering&nbsp;Intern</h3>
+                  <span>May&nbsp;2025&nbsp;–&nbsp;Aug&nbsp;2025</span>
                 </div>
                 <div class="flex justify-between kb text-neutral-200 text-sm">
-                  <p>True Interpretation & Consultation Services</p>
-                  <span>Columbus, OH</span>
+                  <p>True Interpretation&nbsp;&amp;&nbsp;Consultation&nbsp;Services</p>
+                  <span>Columbus,&nbsp;OH</span>
                 </div>
               </div>
 
-              <!-- Description (center on mobile, left on desktop) -->
               <p class="kr text-neutral-400 text-center sm:text-left">
-                Developed a scheduling system to reduce time conflicts between
-                employes and customers reducing wasted time using React,
-                Supabase, and hosted using AWS.
+                Built a scheduling system to reduce conflicts between employees and customers using React,
+                Supabase, and AWS.
               </p>
 
-              <!-- Tech list (center on mobile, left on desktop) -->
               <div class="flex flex-wrap gap-4 justify-center sm:justify-start">
                 <span class="kr">React</span>
                 <span class="kr">Supabase</span>
@@ -372,45 +237,31 @@
               </div>
             </div>
           </div>
-          <!-- end block -->
 
-          <!-- Start EXP Block -->
-          <div class="exp-card">
-            <div
-              class="bg-neutral-900 border-2 border-neutral-700 p-6 rounded-lg flex flex-col gap-4"
-            >
-              <!-- Mobile layout (≤640px) -->
-              <div
-                class="block sm:hidden flex flex-col items-center gap-2 text-center"
-              >
-                <span class="text-sm">May 2021 – July 2025 • Columbus, OH</span>
-                <h3 class="ksb text-xl">Arabic Teacher</h3>
-                <p class="kb text-neutral-200 text-sm">
-                  Masjid Ibn Taymiyah and Islamic Center
-                </p>
+          <!-- EXP Block 2 -->
+          <div class="exp-card fade-in-right">
+            <div class="bg-neutral-900 border-2 border-neutral-700 p-6 rounded-lg flex flex-col gap-4">
+              <div class="block sm:hidden flex flex-col items-center gap-2 text-center">
+                <span class="text-sm">May&nbsp;2021&nbsp;–&nbsp;July&nbsp;2025&nbsp;•&nbsp;Columbus,&nbsp;OH</span>
+                <h3 class="ksb text-xl">Arabic Teacher</h3>
+                <p class="kb text-neutral-200 text-sm">Masjid Ibn Taymiyah and Islamic Center</p>
               </div>
 
-              <!-- Desktop layout (>640px) -->
               <div class="hidden sm:block">
                 <div class="flex justify-between text-sm">
-                  <h3 class="ksb text-xl">Arabic Teacher</h3>
-                  <span>May 2021 – July 2025</span>
+                  <h3 class="ksb text-xl">Arabic Teacher</h3>
+                  <span>May&nbsp;2021&nbsp;–&nbsp;July&nbsp;2025</span>
                 </div>
                 <div class="flex justify-between kb text-neutral-200 text-sm">
-                  <p>Masjid Ibn Taymiyah and Islamic Center</p>
-                  <span>Columbus, OH</span>
+                  <p>Masjid Ibn Taymiyah and Islamic Center</p>
+                  <span>Columbus,&nbsp;OH</span>
                 </div>
               </div>
 
-              <!-- Description (center on mobile, left on desktop) -->
               <p class="kr text-neutral-400 text-center sm:text-left">
-                Designed and delivered an Arabic curriculum for learners of all
-                ages, managed classroom activities and progress assessments for
-                up to 80 students, and provided tailored mentorship to boost
-                language proficiency and cultural understanding.
+                Designed and delivered an Arabic curriculum for learners of all ages and managed progress for up to 80 students.
               </p>
 
-              <!-- Skills list (center on mobile, left on desktop) -->
               <div class="flex flex-wrap gap-4 justify-center sm:justify-start">
                 <span class="kr">Curriculum Design</span>
                 <span class="kr">Classroom Management</span>
@@ -418,24 +269,19 @@
               </div>
             </div>
           </div>
-          <!-- end EXP Block -->
         </div>
       </section>
     </div>
-    <div
-      id="logo"
-      class="grid grid-cols-2 h-8 w-8 ksb grid-rows-2 gap-0 text-sm font-bold"
-    >
-      <div class="text-center logo-text">A</div>
-      <div class="text-center logo-text">B</div>
-      <div class="text-center logo-text">D</div>
-      <div class="text-center logo-text">I</div>
-    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Flip.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
+    <!-- INTRO LOGO OVERLAY -->
+    <div id="logo" class="logo-overlay" aria-hidden="true">
+      <div class="logo-grid">
+        <div class="logo-text">A</div>
+        <div class="logo-text">B</div>
+        <div class="logo-text">D</div>
+        <div class="logo-text">I</div>
+      </div>
+    </div>
 
     <script src="./app.js"></script>
   </body>
