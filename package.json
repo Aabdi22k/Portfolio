@@ -26,7 +26,6 @@
     "lint:css": "stylelint \"src/*.css\" \"src/**/*.css\" --allow-empty-input",
     "lint:js": "eslint \"src/*.js\" \"src/**/*.js\" --max-warnings=0 --no-error-on-unmatched-pattern",
     "test:a11y": "pa11y-ci",
-    "test": "npm run lint:html && npm run lint:css && npm run lint:js && npm run test:a11y",
     "build:posix": "rm -rf dist && mkdir dist && cp -r src/* dist/",
     "build:win": "rimraf dist && mkdir dist && xcopy src dist /E /I /Y >NUL",
     "build": "npm run build:posix || npm run build:win"

@@ -1,0 +1,75 @@
+name: CI/CD (Portfolio)
+
+on:
+  push:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+  packages: write   # needed to push to GHCR
+
+jobs:
+  # ---------- Lint & Accessibility Tests ----------
+  lint_and_accessibility:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Install deps
+        run: npm ci || npm i
+
+      - name: HTMLHint
+        run: npm run lint:html
+
+      - name: Stylelint
+        run: npm run lint:css
+
+      - name: Lint (ESLint)
+        run: npm run lint:js
+
+      - name: Accessibility (pa11y-ci)
+        run: npm run test:a11y
+
+  # ---------- Build & Push docker image  ----------
+  build_and_push:
+    needs: [lint_and_accessibility]
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Login to GHCR (uses GitHub-provided token)
+        run: echo "${{ github.token }}" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
+
+      - name: Build & Push image
+        run: |
+          OWNER_LC=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
+          IMAGE="ghcr.io/${OWNER_LC}/portfolio:latest"
+          echo "Building and pushing $IMAGE"
+          docker build -t "$IMAGE" .
+          docker push "$IMAGE"
+
+  # ---------- Deploy to Lightsail (only after image push) ----------
+  deploy:
+    needs: [build_and_push]
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to Lightsail
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            set -e
+            cd ${{ secrets.DEPLOY_PATH }}
+            docker compose pull portfolio
+            docker compose up -d portfolio
+            docker image prune -f
