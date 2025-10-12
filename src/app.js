@@ -1,5 +1,3 @@
-// app.js — vanilla animations + intro font cycle (no GSAP)
-
 document.addEventListener("DOMContentLoaded", () => {
   // -----------------------------
   // Mobile nav toggle
