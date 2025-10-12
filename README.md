@@ -3,10 +3,8 @@ Welcome to my personal portfolio website. This site showcases my projects, techn
 
 ## Tech Stack
 - **Frontend:** HTML, CSS, JavaScript  
-- **Styling:** Tailwind CSS (utility-first design system)  
-- **Animations:** GSAP, ScrollTrigger, Framer Motion (planned)  
-- **Hosting:** AWS Lightsail  
-- **Version Control & CI/CD:** GitHub Actions → Lightsail SSH Deployment Pipeline
+- **Styling:** Tailwind CSS
+- **CI/CD & Hosting:** Github Actions, AWS Lightsail  
 
 ## ⚙️ Getting Started
 
@@ -50,4 +48,5 @@ Make sure you have the following installed:
      KEY=<your-private-key>
      ```
    - The GitHub Actions workflow in `.github/workflows/ci-cd.yml` will handle automatic deployment.
+
 
