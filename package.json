@@ -31,6 +31,6 @@
     "build:posix": "rm -rf dist && mkdir dist && cp -r src/* dist/",
     "build:win": "rimraf dist && mkdir dist && xcopy src dist /E /I /Y >NUL",
     "build": "npm run build:posix || npm run build:win",
-    "test:a11y:ci": "pa11y-ci \"file://$PWD/src/index.html\""
+    "test:a11y:ci": "pa11y-ci \"src/*.html\" \"src/**/*.html\""
   }
 }
