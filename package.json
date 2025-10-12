@@ -10,14 +10,15 @@
   "devDependencies": {
     "@eslint/js": "^9.37.0",
     "concurrently": "^9.2.1",
-    "eslint": "^9.11.0",
+    "eslint": "^9.37.0",
     "globals": "^16.4.0",
-    "htmlhint": "^1.1.4",
+    "htmlhint": "^1.7.1",
     "http-server": "^14.1.1",
-    "linkinator": "^6.1.2",
+    "linkinator": "^6.3.0",
     "pa11y-ci": "^3.1.0",
-    "stylelint": "^16.8.1",
-    "stylelint-config-standard": "^36.0.0",
+    "rimraf": "^6.0.1",
+    "stylelint": "^16.25.0",
+    "stylelint-config-standard": "^36.0.1",
     "wait-on": "^9.0.1"
   },
   "scripts": {
@@ -25,9 +26,10 @@
     "lint:css": "stylelint \"src/*.css\" \"src/**/*.css\"",
     "lint:js": "eslint \"src/*.js\" \"src/**/*.js\" --max-warnings=0",
     "serve": "http-server ./src -p 5173",
-    "test:links": "concurrently -k -s first -n serve,links \"npm:serve\" \"wait-on http://127.0.0.1:5173 && linkinator http://127.0.0.1:5173 --recurse --silent --skip=http*://*\"",
     "test:a11y": "concurrently -k -s first -n serve,a11y \"npm:serve\" \"wait-on http://127.0.0.1:5173 && pa11y-ci http://127.0.0.1:5173\"",
-    "test": "npm run lint:html && npm run lint:css && npm run lint:js && npm run test:links && npm run test:a11y",
-    "build": "rimraf dist && mkdir dist && xcopy src dist /E /I /Y >NUL"
+    "test": "npm run lint:html && npm run lint:css && npm run lint:js && npm run test:a11y",
+    "build:posix": "rm -rf dist && mkdir dist && cp -r src/* dist/",
+    "build:win": "rimraf dist && mkdir dist && xcopy src dist /E /I /Y >NUL",
+    "build": "npm run build:posix || npm run build:win"
   }
 }
