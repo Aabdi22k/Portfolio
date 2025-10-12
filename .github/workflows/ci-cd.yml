@@ -1,0 +1,108 @@
+name: CI/CD (Portfolio)
+
+on:
+  push:
+    branches: ["**"]          # test on every branch
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: portfolio-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install deps
+        run: npm ci || npm i
+
+      # Split so failures are obvious
+      - name: Lint HTML
+        run: npm run lint:html
+      - name: Lint CSS
+        run: npm run lint:css
+      - name: Lint JS
+        run: npm run lint:js
+      - name: Accessibility (Pa11y)
+        run: npm run test:a11y
+
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Install deps
+        run: npm ci || npm i
+      - name: Build dist
+        run: npm run build
+      - name: Show dist (debug)
+        run: ls -la dist | head -n 100
+      - name: Upload artifact (dist)
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+          if-no-files-found: error
+          retention-days: 3
+
+  deploy:
+    # only deploy on push to main, never on PRs
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+    needs: build
+    runs-on: ubuntu-latest
+    # (optional) protect with an environment
+    # environment: production
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist
+
+      - name: Preflight (mkdir, perms, rsync)
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host:     ${{ secrets.DEPLOY_HOST }}
+          username: ${{ secrets.DEPLOY_USER }}
+          key:      ${{ secrets.DEPLOY_SSH_KEY }}
+          script: |
+            set -e
+            sudo mkdir -p /home/ubuntu/srv/portfolio_static/dist
+            sudo chown -R $USER:$USER /home/ubuntu/srv/portfolio_static
+            command -v rsync >/dev/null 2>&1 || (sudo apt-get update && sudo apt-get install -y rsync)
+
+      - name: Upload dist to server (rsync over SSH)
+        uses: easingthemes/ssh-deploy@v5.1.0
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+          REMOTE_HOST:     ${{ secrets.DEPLOY_HOST }}
+          REMOTE_USER:     ${{ secrets.DEPLOY_USER }}
+          SOURCE:          "dist/"
+          TARGET:          "/home/ubuntu/srv/portfolio_static/dist"
+          ARGS:            "-rltgoDzvO --delete"
+          SSH_CMD_ARGS:    "-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
+
+      - name: Reload Nginx
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host:     ${{ secrets.DEPLOY_HOST }}
+          username: ${{ secrets.DEPLOY_USER }}
+          key:      ${{ secrets.DEPLOY_SSH_KEY }}
+          script: |
+            sudo nginx -t && sudo systemctl reload nginx
