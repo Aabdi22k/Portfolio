@@ -7,7 +7,6 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -24,12 +23,15 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Show build output
+        run: ls -la dist | head -n 100
+
       - name: Upload dist to server (rsync over SSH)
         uses: easingthemes/ssh-deploy@v5.1.0
         env:
           SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
-          REMOTE_HOST:     ${{ secrets.DEPLOY_HOST }}
-          REMOTE_USER:     ${{ secrets.DEPLOY_USER }}
+          REMOTE_HOST: ${{ secrets.DEPLOY_HOST }}
+          REMOTE_USER: ${{ secrets.DEPLOY_USER }}
           SOURCE: "dist/"
           TARGET: "/home/ubuntu/srv/portfolio_static/dist"
           ARGS: "-rltgoDzvO --delete"
