@@ -1,10 +1,5 @@
 # Farah Abdi — Portfolio
-
-Welcome to my personal portfolio website.  
-This site highlights my projects, technical skills, and professional background in software engineering and data science.
-
-### Live Demo
-**Visit:** [https://portfolio.farahabdi.com](https://portfolio.farahabdi.com)
+Welcome to my personal portfolio website. This site showcases my projects, technical skills, and professional Experience.
 
 ## Tech Stack
 - **Frontend:** HTML, CSS, JavaScript  
@@ -55,3 +50,4 @@ Make sure you have the following installed:
      KEY=<your-private-key>
      ```
    - The GitHub Actions workflow in `.github/workflows/ci-cd.yml` will handle automatic deployment.
+
