@@ -6,7 +6,7 @@ on:
 
 permissions:
   contents: read
-  packages: write   
+  packages: write
 
 env:
   IMAGE_NAME: portfolio
@@ -34,10 +34,10 @@ jobs:
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_KEY }}
-          script: |
+          key: ${{ secrets.SSH_KEY }}          
             set -e
             cd ${{ secrets.DEPLOY_PATH }}
             docker compose pull portfolio
             docker compose up -d portfolio
             docker image prune -f
+
