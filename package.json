@@ -25,12 +25,10 @@
     "lint:html": "htmlhint \"src/*.html\" \"src/**/*.html\"",
     "lint:css": "stylelint \"src/*.css\" \"src/**/*.css\" --allow-empty-input",
     "lint:js": "eslint \"src/*.js\" \"src/**/*.js\" --max-warnings=0 --no-error-on-unmatched-pattern",
-    "serve": "http-server ./src -p 5173",
-    "test:a11y": "start-server-and-test \"npm:serve\" http://127.0.0.1:5173 \"pa11y-ci http://127.0.0.1:5173\"",
+    "test:a11y": "pa11y-ci",
     "test": "npm run lint:html && npm run lint:css && npm run lint:js && npm run test:a11y",
     "build:posix": "rm -rf dist && mkdir dist && cp -r src/* dist/",
     "build:win": "rimraf dist && mkdir dist && xcopy src dist /E /I /Y >NUL",
-    "build": "npm run build:posix || npm run build:win",
-    "test:a11y:ci": "pa11y-ci \"src/*.html\" \"src/**/*.html\""
+    "build": "npm run build:posix || npm run build:win"
   }
 }
