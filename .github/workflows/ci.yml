@@ -20,14 +20,5 @@ jobs:
       - name: Install deps
         run: npm ci || npm i
 
-      - name: Lint HTML
-        run: npm run lint:html
-
-      - name: Lint CSS
-        run: npm run lint:css
-
-      - name: Lint JS
-        run: npm run lint:js
-
-      - name: Accessibility
-        run: npm run test:a11y
+      - name: Lint & Accessibility Tests
+        run: npm test
