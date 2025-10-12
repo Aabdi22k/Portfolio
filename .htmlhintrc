@@ -1,0 +1,5 @@
+{
+  "doctype-first": true,
+  "tagname-lowercase": true,
+  "attr-no-duplication": true
+}
