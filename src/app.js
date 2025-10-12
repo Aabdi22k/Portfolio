@@ -1,3 +1,49 @@
+function startTypewriterEffect() {
+  const nameEl = document.getElementById("name");
+  if (!nameEl) return;
+
+  const text = "Farah Abdi.";
+
+  // Reserve final width to prevent layout shift
+  const measurer = document.createElement("span");
+  measurer.textContent = text;
+  measurer.className = nameEl.className;     // same typography classes
+  measurer.style.position = "absolute";
+  measurer.style.visibility = "hidden";
+  measurer.style.whiteSpace = "pre";         // exact width
+  document.body.appendChild(measurer);
+  const w = Math.ceil(measurer.getBoundingClientRect().width);
+  document.body.removeChild(measurer);
+
+  nameEl.style.display = "inline-block";
+  nameEl.style.minWidth = w + "px";          // reserve space
+  nameEl.classList.remove("hid");            // reveal the span
+
+  // Typewriter
+  let i = 0;
+  const cursor = document.createElement("span");
+  cursor.classList.add("blinking-cursor");
+  cursor.textContent = "|";
+  nameEl.textContent = "";
+  nameEl.appendChild(cursor);
+
+  function type() {
+    if (i < text.length) {
+      // insert before cursor so cursor stays at the end
+      cursor.before(text.charAt(i));
+      i++;
+      setTimeout(type, 120);                  // typing speed
+    } else {
+      // stop + remove cursor after a short beat
+      setTimeout(() => {
+        cursor.remove();
+      }, 500);
+    }
+  }
+  type();
+}
+
+
 document.addEventListener("DOMContentLoaded", () => {
   // -----------------------------
   // Mobile nav toggle
@@ -49,7 +95,6 @@ document.addEventListener("DOMContentLoaded", () => {
       ".fade-in-left, .fade-in-right, .fade-in-bottom, .fade-in-up, .fade-in, .reveal"
     )
     .forEach((el) => revealObserver.observe(el));
-
 
   // -----------------------------
   // Intro font cycle → black overlay fade → staged content reveal
@@ -106,6 +151,8 @@ document.addEventListener("DOMContentLoaded", () => {
       // Reveal hero shortly after for a nice stagger
       setTimeout(() => {
         if (hero) hero.classList.add("show");
+        startTypewriterEffect();
+
       }, 150);
     }, total);
 
@@ -114,5 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (logo && logo.parentNode) logo.parentNode.removeChild(logo);
       document.body.style.overflow = prevOverflow || "";
     }, total + 550);
+
+
   }
 });
