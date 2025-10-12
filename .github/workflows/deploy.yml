@@ -1,0 +1,41 @@
+name: Deploy Portfolio
+
+on:
+  push:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+  packages: read  # only need read access for pulling base images
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: |
+          IMAGE="ghcr.io/aabdi22k/portfolio:latest"
+          docker build -t "$IMAGE" .
+
+      - name: Push to GHCR
+        run: |
+          IMAGE="ghcr.io/aabdi22k/portfolio:latest"
+          echo "${{ github.token }}" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
+          docker push "$IMAGE"
+
+      - name: Deploy to Lightsail
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            set -e
+            cd ${{ secrets.DEPLOY_PATH }}
+            docker compose pull portfolio
+            docker compose up -d portfolio
+            docker image prune -f
