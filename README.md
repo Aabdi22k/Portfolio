@@ -6,20 +6,14 @@ This site highlights my projects, technical skills, and professional background 
 ## Live Demo
 **Visit:** [https://portfolio.farahabdi.com](https://portfolio.farahabdi.com)
 
-## Built With
-* [![React][React.js]][React-url]
-* [![Vue][Vue.js]][Vue-url]
-* [![Angular][Angular.io]][Angular-url]
-* [![Svelte][Svelte.dev]][Svelte-url]
-* [![Laravel][Laravel.com]][Laravel-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url] 
+## Tech Stack
+- **Frontend:** HTML, CSS, JavaScript  
+- **Styling:** Tailwind CSS (utility-first design system)  
+- **Animations:** GSAP, ScrollTrigger, Framer Motion (planned)  
+- **Hosting:** AWS Lightsail  
+- **Version Control & CI/CD:** GitHub Actions → Lightsail SSH Deployment Pipeline
 
 ## ⚙️ Getting Started
-
-Follow these instructions to get a local copy of the project running, and understand how to modify or deploy it.
-
----
 
 ### Prerequisites
 
@@ -34,9 +28,7 @@ Make sure you have the following installed:
   ```sh
   git --version
   ```
-
----
-
+  
 ### Installation
 
 1. **Clone the repository**
@@ -76,8 +68,6 @@ Make sure you have the following installed:
      ```
    - The GitHub Actions workflow in `.github/workflows/deploy.yml` will handle automatic deployment.
 
----
-
 ### 🔍 Verify Setup
 
 Once everything’s running, visit:
@@ -85,3 +75,4 @@ Once everything’s running, visit:
 http://localhost:3000
 ```
 You should see the hero section load in with your typewriter animation (“Farah Abdi”) and navbar links active.
+
