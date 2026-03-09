@@ -1,6 +1,7 @@
 ## About The Project
-Welcome to my personal portfolio website. This site showcases my projects, technical skills, and professional experience.
+Welcome to my personal portfolio
 
+This repository contains the source code for my personal portfolio website. The site highlights my software engineerin, data science, and machine learning projects, technical skills, and professional and leadership experience. It is designed to provide a central place to explore my work and access live demonstrations of selected projects.
 
 ### Built With
 - HTML5
@@ -17,15 +18,8 @@ Welcome to my personal portfolio website. This site showcases my projects, techn
 
 Make sure you have the following installed:
 
-* **Node.js** and **npm**
-  ```sh
-  npm install npm@latest -g
-  ```
-
-* **Git** 
-  ```sh
-  git --version
-  ```
+* **Node.js and npm**
+* **Git**
   
 ### Installation
 
@@ -40,12 +34,12 @@ Make sure you have the following installed:
    npm install
    ```
 
-4. **Run locally**
+3. **Run locally**
    ```sh
    npx live-server
    ```
 
-5. **(Optional) Configure deployment**  
+4. **(Optional) Configure deployment**  
    - Add your AWS Lightsail SSH credentials and domain in your GitHub repository secrets:
      ```bash
      HOST=<your-server-ip>
@@ -59,13 +53,13 @@ Make sure you have the following installed:
 
 ## Roadmap
 
-- [] Add professional experiences
-    - [x] True Interpretation & Consulation LLC SWE Internship
+- [ ] Add professional experiences
+    - [x] True Interpretation & Consultation LLC SWE Internship
     - [x] Nationwide DS Internship
-- [] Add leadership experiences
-    - [] MLT Career Prep Fellow
-    - [] Move Arabic Teacher to leadership section
-- [] Add Projects
+- [ ] Add leadership experiences
+    - [ ] MLT Career Prep Fellow
+    - [ ] Move Arabic Teacher to leadership section
+- [ ] Add Projects
     - [x] Solar Panel Output Predictor 
     - [x] 2K Scout
     - [x] Sparkx Chat
@@ -75,14 +69,12 @@ Make sure you have the following installed:
 
 ## License
 
-Distributed under the Unlicense License. See `LICENSE.txt` for more information.
+Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Contact
 
 Farah Abdi - farahaabdi22@gmail.com
-
-Project Link: [https://github.com/aabdi22k/portfolio](https://github.com/aabdi22k/portfolio)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
