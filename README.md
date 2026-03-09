@@ -1,12 +1,17 @@
-# Farah Abdi — Portfolio
-Welcome to my personal portfolio website. This site showcases my projects, technical skills, and professional Experience.
+## About The Project
+Welcome to my personal portfolio website. This site showcases my projects, technical skills, and professional experience.
 
-## Tech Stack
-- **Frontend:** HTML, CSS, JavaScript  
-- **Styling:** Tailwind CSS
-- **CI/CD & Hosting:** Github Actions, AWS Lightsail  
 
-## ⚙️ Getting Started
+### Built With
+- HTML5
+- CSS3
+- JavaScript (ES6+)
+- Node.js
+- Docker
+- GitHub Actions
+- AWS Lightsail
+
+## Getting Started
 
 ### Prerequisites
 
@@ -48,5 +53,36 @@ Make sure you have the following installed:
      KEY=<your-private-key>
      ```
    - The GitHub Actions workflow in `.github/workflows/ci-cd.yml` will handle automatic deployment.
+  
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
+## Roadmap
+
+- [] Add professional experiences
+    - [x] True Interpretation & Consulation LLC SWE Internship
+    - [x] Nationwide DS Internship
+- [] Add leadership experiences
+    - [] MLT Career Prep Fellow
+    - [] Move Arabic Teacher to leadership section
+- [] Add Projects
+    - [x] Solar Panel Output Predictor 
+    - [x] 2K Scout
+    - [x] Sparkx Chat
+    - [ ] Pathfinding Visualizer
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## License
+
+Distributed under the Unlicense License. See `LICENSE.txt` for more information.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Contact
+
+Farah Abdi - farahaabdi22@gmail.com
+
+Project Link: [https://github.com/aabdi22k/portfolio](https://github.com/aabdi22k/portfolio)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
