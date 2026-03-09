@@ -53,7 +53,7 @@ Make sure you have the following installed:
 
 ## Roadmap
 
-- [ ] Add professional experiences
+- [x] Add professional experiences
     - [x] True Interpretation & Consultation LLC SWE Internship
     - [x] Nationwide DS Internship
 - [ ] Add leadership experiences
@@ -67,13 +67,9 @@ Make sure you have the following installed:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## License
+## License & Contact
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## Contact
 
 Farah Abdi - farahaabdi22@gmail.com
 
