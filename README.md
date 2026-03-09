@@ -73,6 +73,6 @@ Make sure you have the following installed:
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
-Farah Abdi - farahaabdi22@gmail.com
+Farah Abdi - farahaabdi22@gmail.com - linkedin.com/in/farahabdi-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
