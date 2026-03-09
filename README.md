@@ -1,7 +1,9 @@
 ## About The Project
-Welcome to my personal portfolio
+Welcome to my personal portfolio.
 
-This repository contains the source code for my personal portfolio website. The site highlights my software engineerin, data science, and machine learning projects, technical skills, and professional and leadership experience. It is designed to provide a central place to explore my work and access live demonstrations of selected projects.
+This repository contains the source code for my portfolio website. The site highlights my software engineering, data science, and machine learning projects, technical skills, and professional and leadership experience.
+
+![Portfolio Homepage](assets/portfolio-home.png)
 
 ### Built With
 - HTML5
