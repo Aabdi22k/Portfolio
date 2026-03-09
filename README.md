@@ -3,7 +3,7 @@ Welcome to my personal portfolio.
 
 This repository contains the source code for my portfolio website. The site highlights my software engineering, data science, and machine learning projects, technical skills, and professional and leadership experience.
 
-![Portfolio Homepage](assets/portfolio-home.png)
+![Portfolio Homepage](src/assets/portfolio-home.png)
 
 ### Built With
 - HTML5
